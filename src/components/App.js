@@ -3,12 +3,9 @@ import "../styles/App.css";
 
 export default function App() {
 
-    function themetoggaler(){
-        if(theme === "light"){
-            document.getElementById("App").classList.toggle("light");
-        }else{
-            document.getElementById("App").classList.toggle("Dark");
-        }
+    const [theme, setTheme] = useState("light");
+    const toggleTheme = () => {
+        setTheme(prevThem => (prevThem === "light" ? "dark" : "light"))
     }
     return (
         <div className="App">
@@ -19,7 +16,7 @@ export default function App() {
                     <input></input>
                     <label>Password</label>
                     <input></input>
-                    <button>Login</button>
+                    <button onClick={toggleTheme}>Login</button>
                 </form>
             </div>
             <label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
