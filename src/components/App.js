@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import "../styles/App.css";
 
 export default function App() {
+
+    function themetoggaler(){
+        if(theme === "light"){
+            document.getElementById("App").classList.toggle("light");
+        }else{
+            document.getElementById("App").classList.toggle("Dark");
+        }
+    }
     return (
         <div className="App">
             <h1>Newton School</h1>
